@@ -1,20 +1,20 @@
 ---
 name: zilliz
 description: >
-  Manage Zilliz Cloud clusters and Milvus vector databases via zilliz-cli.
+  Manage Zilliz Cloud vector databases via zilliz-cli.
   Use when the user wants to: (1) set up zilliz-cli (install, login, configure),
   (2) manage clusters (create, list, describe, suspend, resume, delete, modify),
   (3) manage collections, indexes, partitions, databases, or aliases,
   (4) perform vector operations (search, query, insert, upsert, delete, hybrid search),
   (5) manage users, roles, and RBAC privileges,
   (6) handle backups, imports, billing, monitoring, projects, or regions.
-  Triggers on: zilliz, milvus, vector database, semantic search, RAG, embeddings,
+  Triggers on: zilliz, vector database, semantic search, RAG, embeddings,
   collection schema, vector index, similarity search, zilliz-cli.
 ---
 
 # Zilliz Cloud CLI Skill
 
-Operate Zilliz Cloud and Milvus through `zilliz-cli`. All operations are executed via shell commands.
+Operate Zilliz Cloud through `zilliz-cli`. All operations are executed via shell commands.
 
 ## Prerequisite Check (always run first)
 
