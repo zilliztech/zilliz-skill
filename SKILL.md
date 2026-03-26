@@ -7,7 +7,7 @@ description: >
   (3) manage collections, indexes, partitions, databases, or aliases,
   (4) perform vector operations (search, query, insert, upsert, delete, hybrid search),
   (5) manage users, roles, and RBAC privileges,
-  (6) handle backups, imports, billing, monitoring, projects, or regions.
+  (6) handle backups, imports, billing, monitoring, projects, regions, or async jobs.
   Triggers on: zilliz, vector database, semantic search, RAG, embeddings,
   collection schema, vector index, similarity search, zilliz-cli.
 ---
@@ -67,6 +67,7 @@ Each reference covers one resource domain with full command syntax, options, and
 | Billing | [references/billing.md](references/billing.md) | Usage queries, invoices, payment methods |
 | Monitoring | [references/monitoring.md](references/monitoring.md) | Cluster status, collection stats, load states |
 | Projects & regions | [references/project-region.md](references/project-region.md) | Projects, volumes, cloud providers, regions |
+| Jobs | [references/job.md](references/job.md) | Track async job status, wait for completion |
 
 ## Quick-Start Workflow
 
@@ -96,13 +97,14 @@ For new users, guide through setup in order:
 
 ## Async Operations
 
-These return immediately; poll for completion:
+These return immediately with a `jobId`; track with `job describe` (see [references/job.md](references/job.md)):
 
 | Operation | Poll command |
 |---|---|
 | `cluster create` | `cluster describe --cluster-id <id>` until RUNNING |
-| `backup create/export/restore-*` | `backup describe --cluster-id <id> --backup-id <bid>` |
-| `import start` | `import status --job-id <jid> --cluster-id <id>` |
+| `backup create/export/restore-*` | `job describe --job-id <jid>` or `backup describe` |
+| `import start` | `job describe --job-id <jid>` |
+| Any async op with jobId | `job describe --job-id <jid> --wait` |
 
 ## Safety Rules
 
