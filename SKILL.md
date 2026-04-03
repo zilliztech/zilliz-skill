@@ -21,9 +21,14 @@ Operate Zilliz Cloud through `zilliz-cli`. All operations are executed via shell
 Before any operation, verify in order:
 
 ```bash
-python3 -m pip show zilliz-cli    # 1. CLI installed? If not: pip install --upgrade zilliz-cli
-zilliz auth status                 # 2. Logged in? If not: guide user to login in their terminal
-zilliz context current             # 3. Context set? (only for data-plane ops)
+# 1. Install or update the CLI
+curl -fsSL https://raw.githubusercontent.com/zilliztech/zilliz-cli/master/install.sh | bash
+
+# 2. Logged in? If not: guide user to login in their terminal
+zilliz auth status
+
+# 3. Context set? (only for data-plane ops)
+zilliz context current
 ```
 
 **CRITICAL:** `zilliz login`, `zilliz configure`, and `zilliz auth switch` require interactive input — NEVER run them in a non-interactive shell. Instruct the user to run in their own terminal. NEVER ask for API keys in chat.
@@ -38,13 +43,13 @@ All commands support `--output json|table|text` (default: `text`). Use `--output
 
 ## Cluster Type Capabilities
 
-| Feature | Free | Serverless | Dedicated |
-|---|---|---|---|
-| Collection CRUD & Vector ops | Yes | Yes | Yes |
-| Database create/drop | No | No | Yes |
-| User/role management | No | Limited | Yes |
-| Backup management | No | Yes | Yes |
-| Cluster modify (CU/replica) | No | No | Yes |
+| Feature                      | Free | Serverless | Dedicated |
+| ---------------------------- | ---- | ---------- | --------- |
+| Collection CRUD & Vector ops | Yes  | Yes        | Yes       |
+| Database create/drop         | No   | No         | Yes       |
+| User/role management         | No   | Limited    | Yes       |
+| Backup management            | No   | Yes        | Yes       |
+| Cluster modify (CU/replica)  | No   | No         | Yes       |
 
 Check cluster type first when a command fails with permission errors.
 
@@ -52,28 +57,28 @@ Check cluster type first when a command fails with permission errors.
 
 Each reference covers one resource domain with full command syntax, options, and guidance. Read the relevant reference when handling that domain:
 
-| Domain | Reference | When to read |
-|---|---|---|
-| Setup & auth | [references/setup.md](references/setup.md) | Install, login, context, config, troubleshooting |
-| Clusters | [references/cluster.md](references/cluster.md) | Create, list, describe, modify, suspend, resume, delete clusters |
-| Collections | [references/collection.md](references/collection.md) | Create, list, describe, drop, rename, load, release, aliases |
-| Vectors | [references/vector.md](references/vector.md) | Search, query, insert, upsert, get, delete, hybrid search, filters |
-| Indexes | [references/index.md](references/index.md) | Create, list, describe, drop indexes |
-| Databases | [references/database.md](references/database.md) | Create, list, describe, drop databases |
-| Partitions | [references/partition.md](references/partition.md) | Create, list, load, release, drop partitions |
-| Users & roles | [references/user-role.md](references/user-role.md) | RBAC: users, roles, privileges (Dedicated only) |
-| Backups | [references/backup.md](references/backup.md) | Create, restore, export backups; manage backup policies |
-| Import | [references/import.md](references/import.md) | Bulk data import from cloud storage |
-| Billing | [references/billing.md](references/billing.md) | Usage queries, invoices, payment methods |
-| Monitoring | [references/monitoring.md](references/monitoring.md) | Cluster status, collection stats, load states |
-| Projects & regions | [references/project-region.md](references/project-region.md) | Projects, volumes, cloud providers, regions |
-| Jobs | [references/job.md](references/job.md) | Track async job status, wait for completion |
+| Domain             | Reference                                                    | When to read                                                       |
+| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Setup & auth       | [references/setup.md](references/setup.md)                   | Install, login, context, config, troubleshooting                   |
+| Clusters           | [references/cluster.md](references/cluster.md)               | Create, list, describe, modify, suspend, resume, delete clusters   |
+| Collections        | [references/collection.md](references/collection.md)         | Create, list, describe, drop, rename, load, release, aliases       |
+| Vectors            | [references/vector.md](references/vector.md)                 | Search, query, insert, upsert, get, delete, hybrid search, filters |
+| Indexes            | [references/index.md](references/index.md)                   | Create, list, describe, drop indexes                               |
+| Databases          | [references/database.md](references/database.md)             | Create, list, describe, drop databases                             |
+| Partitions         | [references/partition.md](references/partition.md)           | Create, list, load, release, drop partitions                       |
+| Users & roles      | [references/user-role.md](references/user-role.md)           | RBAC: users, roles, privileges (Dedicated only)                    |
+| Backups            | [references/backup.md](references/backup.md)                 | Create, restore, export backups; manage backup policies            |
+| Import             | [references/import.md](references/import.md)                 | Bulk data import from cloud storage                                |
+| Billing            | [references/billing.md](references/billing.md)               | Usage queries, invoices, payment methods                           |
+| Monitoring         | [references/monitoring.md](references/monitoring.md)         | Cluster status, collection stats, load states                      |
+| Projects & regions | [references/project-region.md](references/project-region.md) | Projects, volumes, cloud providers, regions                        |
+| Jobs               | [references/job.md](references/job.md)                       | Track async job status, wait for completion                        |
 
 ## Quick-Start Workflow
 
 For new users, guide through setup in order:
 
-1. Install CLI: `python3 -m pip install --upgrade zilliz-cli`
+1. Install CLI: `curl -fsSL https://raw.githubusercontent.com/zilliztech/zilliz-cli/master/install.sh | bash`
 2. Authenticate: user runs `zilliz login` in their terminal
 3. Verify: `zilliz auth status`
 4. List clusters: `zilliz cluster list`
@@ -83,12 +88,14 @@ For new users, guide through setup in order:
 ## Common Workflows
 
 **Create collection and prepare for search:**
+
 1. `zilliz collection create --name <name> --dimension <dim>` — create
 2. `zilliz index create --collection <name>` — index (AUTOINDEX recommended)
 3. `zilliz collection load --name <name>` — load into memory
 4. `zilliz vector search --collection <name> --data '[[...]]'` — search
 
 **Status overview** (read [references/monitoring.md](references/monitoring.md)):
+
 1. `zilliz context current --output json`
 2. `zilliz cluster describe --cluster-id <id> --output json`
 3. `zilliz database list --output json`
@@ -99,12 +106,12 @@ For new users, guide through setup in order:
 
 These return immediately with a `jobId`; track with `job describe` (see [references/job.md](references/job.md)):
 
-| Operation | Poll command |
-|---|---|
-| `cluster create` | `cluster describe --cluster-id <id>` until RUNNING |
+| Operation                        | Poll command                                       |
+| -------------------------------- | -------------------------------------------------- |
+| `cluster create`                 | `cluster describe --cluster-id <id>` until RUNNING |
 | `backup create/export/restore-*` | `job describe --job-id <jid>` or `backup describe` |
-| `import start` | `job describe --job-id <jid>` |
-| Any async op with jobId | `job describe --job-id <jid> --wait` |
+| `import start`                   | `job describe --job-id <jid>`                      |
+| Any async op with jobId          | `job describe --job-id <jid> --wait`               |
 
 ## Safety Rules
 
