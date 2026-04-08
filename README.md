@@ -7,6 +7,9 @@ A skill that teaches AI agents how to operate [Zilliz Cloud](https://zilliz.com/
 - "Show me the status of all my clusters and collections"
 - "Set up a daily backup policy for my production cluster with 7-day retention"
 - "Create a role with read-only access to the analytics collection"
+- "Import data from S3 into my embeddings collection"
+- "Check the status of my import job"
+- "Show me this month's usage and invoices"
 
 ## Skill Structure
 
@@ -26,7 +29,8 @@ zilliz/
     ├── import.md                 # Bulk data import from cloud storage
     ├── billing.md                # Usage, invoices, payment
     ├── monitoring.md             # Status overview, collection stats
-    └── project-region.md         # Projects, volumes, cloud providers
+    ├── project-region.md         # Projects, volumes, cloud providers
+    └── job.md                    # Async job tracking
 ```
 
 ## Capabilities
@@ -40,11 +44,12 @@ zilliz/
 | **Databases** | Create, list, describe, drop |
 | **Users & Roles** | RBAC setup, privilege management |
 | **Backups** | Create, restore, export, policy management |
-| **Import** | Bulk data import from S3/GCS |
+| **Import** | Bulk data import from cloud storage |
+| **Jobs** | Track async operations (backup, restore, migration, import, clone) |
 | **Partitions** | Create, load, release, manage |
 | **Monitoring** | Cluster status, collection stats, load states |
+| **Billing** | Usage, invoices, payment methods |
 | **Projects** | Project and region management |
-| **Billing** | Usage queries, invoices |
 
 ## Installation
 
@@ -60,13 +65,12 @@ Copy the `zilliz/` directory into your skill path and ensure SKILL.md is discove
 
 ## Requirements
 
-- Python 3.10+
-- A [Zilliz Cloud](https://cloud.zilliz.com/) account
+- A [Zilliz Cloud](https://cloud.zilliz.com/) account (or local Milvus instance)
 - `zilliz-cli` (the skill guides installation automatically)
 
 ## Origin
 
-Extracted from the [zilliz-plugin](https://github.com/zilliztech/zilliz-plugin) Claude Code plugin. The 13 reference files correspond directly to the plugin's `skills/` directory.
+Extracted from the [zilliz-plugin](https://github.com/zilliztech/zilliz-plugin) Claude Code plugin. The 14 reference files correspond directly to the plugin's `skills/` directory.
 
 ## License
 

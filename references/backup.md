@@ -10,7 +10,10 @@
 
 ```bash
 zilliz backup create --cluster-id <cluster-id>
-# Optional: --database <database-name>, --collection <collection-name>
+# Optional:
+#   --database <database-name>
+#   --collection <collection-name>
+#   --backup-type <CLUSTER|COLLECTION>
 # Or use raw JSON: --body '{...}'
 ```
 
@@ -21,7 +24,7 @@ zilliz backup list
 # Optional:
 #   --project-id <filter-by-project-id>
 #   --cluster-id <filter-by-cluster-id>
-#   --creation-method <manual|auto>
+#   --creation-method <MANUAL|AUTO>
 #   --backup-type <CLUSTER|COLLECTION>
 # Pagination: --page-size <n> --page <n>
 # Fetch all pages: --all
