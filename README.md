@@ -19,7 +19,7 @@ zilliz/
 └── references/                   # Domain-specific command references (loaded on demand)
     ├── setup.md                  # Install, auth, context, config, troubleshooting
     ├── cluster.md                # Cluster create, list, describe, modify, suspend, delete
-    ├── collection.md             # Collection CRUD, aliases, load/release
+    ├── collection.md             # Collection CRUD, aliases, load/release, per-collection metrics
     ├── vector.md                 # Search, query, insert, hybrid search, filter syntax
     ├── index.md                  # Index types, create/drop
     ├── database.md               # Database CRUD (Dedicated clusters only)
@@ -28,7 +28,7 @@ zilliz/
     ├── backup.md                 # Backup/restore, policies
     ├── import.md                 # Bulk data import from cloud storage
     ├── billing.md                # Usage, invoices, payment
-    ├── monitoring.md             # Status overview, collection stats
+    ├── monitoring.md             # Status overview, collection stats, cluster and per-collection time-series metrics
     ├── project-region.md         # Projects, volumes, cloud providers
     └── job.md                    # Async job tracking
 ```
@@ -47,7 +47,7 @@ zilliz/
 | **Import** | Bulk data import from cloud storage |
 | **Jobs** | Track async operations (backup, restore, migration, import, clone) |
 | **Partitions** | Create, load, release, manage |
-| **Monitoring** | Cluster status, collection stats, load states |
+| **Monitoring** | Cluster status, collection stats, load states, cluster and per-collection time-series metrics |
 | **Billing** | Usage, invoices, payment methods |
 | **Projects** | Project and region management |
 

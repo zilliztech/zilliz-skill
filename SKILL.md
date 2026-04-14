@@ -61,7 +61,7 @@ Each reference covers one resource domain with full command syntax, options, and
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------ |
 | Setup & auth       | [references/setup.md](references/setup.md)                   | Install, login, context, config, troubleshooting                   |
 | Clusters           | [references/cluster.md](references/cluster.md)               | Create, list, describe, modify, suspend, resume, delete clusters   |
-| Collections        | [references/collection.md](references/collection.md)         | Create, list, describe, drop, rename, load, release, aliases       |
+| Collections        | [references/collection.md](references/collection.md)         | Create, list, describe, drop, rename, load, release, aliases, per-collection metrics |
 | Vectors            | [references/vector.md](references/vector.md)                 | Search, query, insert, upsert, get, delete, hybrid search, filters |
 | Indexes            | [references/index.md](references/index.md)                   | Create, list, describe, drop indexes                               |
 | Databases          | [references/database.md](references/database.md)             | Create, list, describe, drop databases                             |
@@ -70,7 +70,7 @@ Each reference covers one resource domain with full command syntax, options, and
 | Backups            | [references/backup.md](references/backup.md)                 | Create, restore, export backups; manage backup policies            |
 | Import             | [references/import.md](references/import.md)                 | Bulk data import from cloud storage                                |
 | Billing            | [references/billing.md](references/billing.md)               | Usage queries, invoices, payment methods                           |
-| Monitoring         | [references/monitoring.md](references/monitoring.md)         | Cluster status, collection stats, load states                      |
+| Monitoring         | [references/monitoring.md](references/monitoring.md)         | Cluster status, collection stats, load states, cluster and per-collection time-series metrics |
 | Projects & regions | [references/project-region.md](references/project-region.md) | Projects, volumes, cloud providers, regions                        |
 | Jobs               | [references/job.md](references/job.md)                       | Track async job status, wait for completion                        |
 
