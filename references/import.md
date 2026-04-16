@@ -1,39 +1,51 @@
+# import — Import data from cloud storage.
+
+_Section: Cloud Management_
 
 ## Prerequisites
 
-1. CLI installed and logged in (see setup skill).
-2. Target collection must exist on the target cluster.
+- `zilliz` CLI installed and authenticated.
+- Active cluster context for operations that target a cluster.
 
 ## Commands Reference
 
-### Start an Import Job
+### Start — Start a data import job.
 
 ```bash
-zilliz import start --cluster-id <target-cluster-id> --collection <target-collection-name>
-# Or use raw JSON: --body '{"files": [["s3://bucket/path/data.parquet"]]}'
+zilliz import start --cluster-id <cluster-id> --collection <collection>
+#   [--api-key <api-key>]
 ```
 
-### List Imports
+**Flags:**
+- `--cluster-id` (**required**, `string`) — target cluster ID
+- `--collection` (**required**, `string`) — target collection name
+- `--api-key` (`string`, env `ZILLIZ_API_KEY`) — API key (overrides env/config)
+
+### List — List import jobs for a cluster.
 
 ```bash
 zilliz import list --cluster-id <cluster-id>
-# Optional: --database <database-name>
+#   [--page-size <page-size>]
+#   [--page <page>]
+#   [--database <database>]
+#   [--api-key <api-key>]
 ```
 
-### Check Import Status
+**Flags:**
+- `--cluster-id` (**required**, `string`) — cluster ID
+- `--page-size` (`integer`) — items per page
+- `--page` (`integer`) — page number
+- `--database` (`string`) — database name
+- `--api-key` (`string`, env `ZILLIZ_API_KEY`) — API key (overrides env/config)
+
+### Status — Get status of an import job.
 
 ```bash
-zilliz import status --job-id <import-job-id> --cluster-id <cluster-id>
+zilliz import status --job-id <job-id> --cluster-id <cluster-id>
+#   [--api-key <api-key>]
 ```
 
-## Integration Setup
-
-Import requires a cloud storage integration to access data files. The `integration-id` is configured in the Zilliz Cloud console under **Project Settings > Integrations**. Ensure the integration has read access to the source bucket and path.
-
-Supported file formats: Parquet, JSON, CSV.
-
-## Guidance
-
-- Import jobs run asynchronously. After starting a job, use `import status` to track progress.
-- The data files must be accessible from Zilliz Cloud (e.g., S3, GCS with proper integration configured).
-- The collection schema must match the data file structure.
+**Flags:**
+- `--job-id` (**required**, `string`) — import job ID
+- `--cluster-id` (**required**, `string`) — cluster ID
+- `--api-key` (`string`, env `ZILLIZ_API_KEY`) — API key (overrides env/config)

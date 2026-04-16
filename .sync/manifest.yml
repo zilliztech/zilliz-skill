@@ -1,0 +1,13 @@
+lastSyncedTag: zilliz-v1.1.0
+lastSyncedAt: 2026-04-16T04:02:41.208Z
+generated:
+  - SKILL.md
+  - references/*.md
+preserved:
+  - .sync/**
+  - LICENSE
+  - README.md
+  - references/monitoring.md
+  - references/project-region.md
+  - references/setup.md
+  - references/user-role.md

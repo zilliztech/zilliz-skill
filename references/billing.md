@@ -1,51 +1,38 @@
+# billing — View usage, invoices, and billing information.
+
+_Section: Cloud Management_
 
 ## Prerequisites
 
-1. CLI installed and logged in via OAuth (see setup skill).
-2. Billing features require OAuth login -- API Key mode may not have access.
+- `zilliz` CLI installed and authenticated.
+- Active cluster context for operations that target a cluster.
 
 ## Commands Reference
 
-### Query Usage
+### Usage — Show billing usage summary.
 
 ```bash
-# Last N days
-zilliz billing usage --last 7d
-
-# Current month
-zilliz billing usage --month this
-
-# Last month
-zilliz billing usage --month last
-
-# Specific month
-zilliz billing usage --month 2026-01
-
-# Custom date range
-zilliz billing usage --start 2026-01-01 --end 2026-01-31
+zilliz billing usage
+#   [--month <month>  # default: today]
+#   [--last <last>]
+#   [--start <start>]
+#   [--end <end>]
 ```
 
-### List Invoices
+**Flags:**
+- `--month` (`string`, default `today`) — Month: YYYY-MM, 'this', or 'last'
+- `--last` (`string`) — Relative period: 7d, 1m, 1y
+- `--start` (`string`) — Start time (ISO 8601 or YYYY-MM-DD)
+- `--end` (`string`) — End time (ISO 8601 or YYYY-MM-DD)
+
+### Invoices — List invoices.
 
 ```bash
-# List all invoices (paginated)
 zilliz billing invoices
-
-# Fetch all pages
-zilliz billing invoices --all
-
-# Paginate manually
-zilliz billing invoices --page-size 10 --page 1
+#   [--page-size <page-size>  # default: 20]
+#   [--page <page>  # default: 1]
 ```
 
-### View Invoice Details
-
-```bash
-zilliz billing invoices --invoice-id inv-xxxxxxxxxxxx
-```
-
-## Guidance
-
-- Billing commands require OAuth login, not API Key authentication.
-- When the user asks about costs or spending, use `billing usage` with an appropriate time range.
-- To bind a credit card, direct the user to the Zilliz Cloud web console -- card binding is not available via CLI for security reasons.
+**Flags:**
+- `--page-size` (`integer`, default `20`) — Number of invoices per page
+- `--page` (`integer`, default `1`) — Page number
