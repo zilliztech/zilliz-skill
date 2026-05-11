@@ -11,6 +11,7 @@
 
 ```bash
 zilliz project create --name <project-name> --plan <Standard|Enterprise|BusinessCritical>
+# Optional: --region '[...]'
 ```
 
 #### List Projects
@@ -25,10 +26,22 @@ zilliz project list
 zilliz project describe --project-id <project-id>
 ```
 
+#### Delete a Project
+
+```bash
+zilliz project delete --project-id <project-id>
+```
+
 #### Upgrade a Project
 
 ```bash
 zilliz project upgrade --project-id <project-id> --plan <Standard|Enterprise|BusinessCritical>
+```
+
+#### Bind additional regions to an existing project
+
+```bash
+zilliz project add-regions --project-id <project-id> --region '[...]'
 ```
 
 ### Volumes
@@ -51,12 +64,26 @@ zilliz volume create \
 ```bash
 zilliz volume list --project-id <project-id>
 # Pagination: --page-size <n> --page <n>
+# Fetch all pages: --all
 ```
 
 #### Delete a Volume
 
 ```bash
 zilliz volume delete --name <volume-name-to-delete>
+```
+
+#### Describe a Volume
+
+```bash
+zilliz volume describe --name <volume-name>
+```
+
+#### Apply
+
+```bash
+zilliz volume apply --name <volume-name>
+# Optional: --project-id <project-id>
 ```
 
 ## Guidance

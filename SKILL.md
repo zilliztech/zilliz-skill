@@ -60,18 +60,21 @@ Each reference covers one resource domain with full command syntax, options, and
 | Domain             | Reference                                                    | When to read                                                       |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------ |
 | Setup & auth       | [references/setup.md](references/setup.md)                   | Install, login, context, config, troubleshooting                   |
-| Clusters           | [references/cluster.md](references/cluster.md)               | Create, list, describe, modify, suspend, resume, delete clusters   |
+| Clusters           | [references/cluster.md](references/cluster.md)               | Create, list, describe, modify, suspend, resume, delete clusters; create Vector Lake |
+| On-demand clusters | [references/on-demand-cluster.md](references/on-demand-cluster.md) | Create, list, describe, delete on-demand (Vector Lake) clusters with auto-suspend TTL |
 | Collections        | [references/collection.md](references/collection.md)         | Create, list, describe, drop, rename, load, release, aliases, per-collection metrics |
+| External collections | [references/external-collection.md](references/external-collection.md) | Trigger, describe, list refresh jobs for Vector Lake-backed collections |
 | Vectors            | [references/vector.md](references/vector.md)                 | Search, query, insert, upsert, get, delete, hybrid search, filters |
 | Indexes            | [references/index.md](references/index.md)                   | Create, list, describe, drop indexes                               |
 | Databases          | [references/database.md](references/database.md)             | Create, list, describe, drop databases                             |
 | Partitions         | [references/partition.md](references/partition.md)           | Create, list, load, release, drop partitions                       |
 | Users & roles      | [references/user-role.md](references/user-role.md)           | RBAC: users, roles, privileges (Dedicated only)                    |
 | Backups            | [references/backup.md](references/backup.md)                 | Create, restore, export backups; manage backup policies            |
-| Import             | [references/import.md](references/import.md)                 | Bulk data import from cloud storage                                |
+| Import             | [references/import.md](references/import.md)                 | Bulk data import from cloud storage; manage import stages          |
 | Billing            | [references/billing.md](references/billing.md)               | Usage queries, invoices, payment methods                           |
 | Monitoring         | [references/monitoring.md](references/monitoring.md)         | Cluster status, collection stats, load states, cluster and per-collection time-series metrics |
 | Projects & regions | [references/project-region.md](references/project-region.md) | Projects, volumes, cloud providers, regions                        |
+| PrivateLink        | [references/privatelink.md](references/privatelink.md)       | Endpoint services, project endpoints, whitelist management         |
 | Jobs               | [references/job.md](references/job.md)                       | Track async job status, wait for completion                        |
 
 ## Quick-Start Workflow
