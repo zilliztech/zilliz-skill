@@ -76,6 +76,7 @@ Each reference covers one resource domain with full command syntax, options, and
 | Projects & regions | [references/project-region.md](references/project-region.md) | Projects, volumes, cloud providers, regions                        |
 | PrivateLink        | [references/privatelink.md](references/privatelink.md)       | Endpoint services, project endpoints, whitelist management         |
 | Jobs               | [references/job.md](references/job.md)                       | Track async job status, wait for completion                        |
+| Diagnose           | [references/diagnose.md](references/diagnose.md)             | Read-only health diagnosis for clusters and collections (slow, stuck, errors, quota) |
 
 ## Quick-Start Workflow
 
