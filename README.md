@@ -29,6 +29,7 @@ zilliz/
     ├── database.md               # Database CRUD (Dedicated clusters only)
     ├── partition.md              # Partition management
     ├── user-role.md              # RBAC: users, roles, privileges
+    ├── acl.md                    # Cloud-level RBAC: org/project roles, member and group grants
     ├── backup.md                 # Backup/restore, policies
     ├── import.md                 # Bulk data import from cloud storage; import stages
     ├── billing.md                # Usage, invoices, payment
@@ -50,6 +51,7 @@ zilliz/
 | **Indexes** | Create (AUTOINDEX), list, describe, drop |
 | **Databases** | Create, list, describe, drop |
 | **Users & Roles** | RBAC setup, privilege management |
+| **Access Control** | Cloud-level RBAC: custom org/project roles with policies, member and SCIM group grants |
 | **Backups** | Create, restore, export, policy management |
 | **Import** | Bulk data import from cloud storage; managed import stages |
 | **Jobs** | Track async operations (backup, restore, migration, import, clone) |

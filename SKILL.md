@@ -6,7 +6,8 @@ description: >
   (2) manage clusters (create, list, describe, suspend, resume, delete, modify),
   (3) manage collections, indexes, partitions, databases, or aliases,
   (4) perform vector operations (search, query, insert, upsert, delete, hybrid search),
-  (5) manage users, roles, and RBAC privileges,
+  (5) manage database users, roles, and RBAC privileges, or cloud-level access
+      control (org/project roles, member and group grants),
   (6) handle backups, imports, billing, monitoring, projects, regions, or async jobs.
   Triggers on: zilliz, vector database, semantic search, RAG, embeddings,
   collection schema, vector index, similarity search, zilliz-cli.
@@ -69,6 +70,7 @@ Each reference covers one resource domain with full command syntax, options, and
 | Databases          | [references/database.md](references/database.md)             | Create, list, describe, drop databases                             |
 | Partitions         | [references/partition.md](references/partition.md)           | Create, list, load, release, drop partitions                       |
 | Users & roles      | [references/user-role.md](references/user-role.md)           | RBAC: users, roles, privileges (Dedicated only)                    |
+| Access control     | [references/acl.md](references/acl.md)                       | Cloud-level RBAC: custom org/project roles, policies, member and SCIM group grants |
 | Backups            | [references/backup.md](references/backup.md)                 | Create, restore, export backups; manage backup policies            |
 | Import             | [references/import.md](references/import.md)                 | Bulk data import from cloud storage; manage import stages          |
 | Billing            | [references/billing.md](references/billing.md)               | Usage queries, invoices, payment methods                           |
