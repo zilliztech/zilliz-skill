@@ -1,7 +1,3 @@
----
-name: diagnose
-description: Use when the user reports that a Zilliz Cloud cluster or Milvus collection is unhealthy, slow, stuck, returning errors, hitting quotas, or otherwise misbehaving — or when they ask "what's wrong with...", "why is ... slow", "diagnose ...", "troubleshoot ...".
----
 
 ## Prerequisites
 
